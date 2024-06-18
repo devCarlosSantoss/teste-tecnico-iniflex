@@ -72,12 +72,20 @@ public class Main {
         }
         System.out.println("Funcionários inseridos com sucesso.");
     }
+
     public static void imprimirFuncionarios() {
-        System.out.printf("%-20s%-25s%-20s%-20s\n", "Nome", "Data de Nascimento", "Salário", "Função");
+        // Título da tabela
+        System.out.printf("|%-20s|%-25s|%-20s|%-20s|\n", "Nome", "Data de Nascimento", "Salário", "Função");
+
+        // Linha separadora
+        System.out.println("--------------------------------------------------------------------------------");
+
+        // Dados dos funcionários
         for (Funcionario func : funcionarios) {
-            System.out.printf("%-20s%-25sR$%-18s%-20s\n", func.getNome(), func.getDataNascimentoFormatada(), func.getSalarioFormatado(), func.getFuncao());
+            System.out.printf("|%-20s|%-25s|%-20s|%-20s|\n", func.getNome(), func.getDataNascimentoFormatada(), func.getSalarioFormatado(), func.getFuncao());
         }
     }
+
 
     public static void aumentarSalario() {
         for (Funcionario func : funcionarios) {
